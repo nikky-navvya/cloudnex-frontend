@@ -1,0 +1,1879 @@
+{
+	"info": {
+		"_postman_id": "4bb72dc1-29ee-4658-9917-48c34836c076",
+		"name": "Cloudnex",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40303457"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "http://localhost:4000/api/auth/register-tenant",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"companyName\": \"Slkit Technologies\",\r\n  \"adminName\": \"Dipankar\",\r\n  \"email\": \"admin@slkit.com\",\r\n  \"password\": \"Test@123\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/auth/register-tenant",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"auth",
+								"register-tenant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:4000/api/auth/login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"admin@cloudnex.com\",\r\n  \"password\": \"Test@123\"\r\n} \r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:4000/api/auth/me",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTM3MjYxOTdmY2E1MGM5YzA0MzdkNzciLCJ0ZW5hbnRJZCI6IjY5MzcyNjE5N2ZjYTUwYzljMDQzN2Q3NSIsInJvbGUiOiJURU5BTlRfQURNSU4iLCJpYXQiOjE3NjU2NDAzNTEsImV4cCI6MTc2NTY0Mzk1MX0.aIa1ADFw5LcKOrYJDtY2IlttdCTAXh5EP5Ov2qBKGa4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/auth/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"auth",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:4000/api/auth/refresh",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTNlYjZhMGFjM2Y5M2I1ODJjOTY4MGIiLCJ0ZW5hbnRJZCI6IjY5M2ViNjlmYWMzZjkzYjU4MmM5NjgwOSIsInJvbGUiOiJURU5BTlRfQURNSU4iLCJpYXQiOjE3NjU3MTc3MjUsImV4cCI6MTc2NjMyMjUyNX0.sIa9GbJZpzUH22fibMyrlNXX5eWuBP_D4QoZa1EtgwI\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/auth/refresh",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"auth",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:4000/api/auth/logout",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTNlYjZhMGFjM2Y5M2I1ODJjOTY4MGIiLCJ0ZW5hbnRJZCI6IjY5M2ViNjlmYWMzZjkzYjU4MmM5NjgwOSIsInJvbGUiOiJURU5BTlRfQURNSU4iLCJpYXQiOjE3NjU3MTc3MjUsImV4cCI6MTc2NjMyMjUyNX0.sIa9GbJZpzUH22fibMyrlNXX5eWuBP_D4QoZa1EtgwI\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/auth/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:4000/api/auth/forgot-password",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"admin@slkit.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/auth/forgot-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"auth",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:4000/api/auth/reset-password",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTNlYjZhMGFjM2Y5M2I1ODJjOTY4MGIiLCJpYXQiOjE3NjU3MTgwOTYsImV4cCI6MTc2NTcyMTY5Nn0.IrQuqXJuSAHPE1EP8TC_TdUhAWFbEpZl3q1wM1nf9Io\",\r\n  \"newPassword\": \"NewPass@123\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/auth/reset-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"auth",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:4000/api/auth/change-password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTNlYjZhMGFjM2Y5M2I1ODJjOTY4MGIiLCJ0ZW5hbnRJZCI6IjY5M2ViNjlmYWMzZjkzYjU4MmM5NjgwOSIsInJvbGUiOiJURU5BTlRfQURNSU4iLCJpYXQiOjE3NjU3MTgzNzMsImV4cCI6MTc2NTcyMTk3M30.NMqYaVNoWKGN6wiuj5XQPdwWDVQj9QmWaMvN0m8cd6s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"currentPassword\": \"NewPass@123\",\r\n  \"newPassword\": \"NewPass@1234\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/auth/change-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"auth",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Modules",
+			"item": [
+				{
+					"name": "http://localhost:4000/api/system-config/modules/listing",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTNkOTA0ZWU0MGNlNDZmNmIyNGZhOWUiLCJ0ZW5hbnRJZCI6IjY5M2Q5MDRlZTQwY2U0NmY2YjI0ZmE5YyIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc2NTkwNTQ5MSwiZXhwIjoxNzY1OTA5MDkxfQ.nM2Up8oqYoE1dJbSBCTT523D79DDrSOw5WbbSEBjevk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"onlyActive\": true,\r\n  \"search\": \"payrol\",\r\n  \"page\": 1,\r\n  \"record\": 10,\r\n  \"sortBy\": \"createdAt\",\r\n  \"sortOrder\": \"asc\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/system-config/modules/listing",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"system-config",
+								"modules",
+								"listing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:4000/api/system-config/modules/edit",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTNkOTA0ZWU0MGNlNDZmNmIyNGZhOWUiLCJ0ZW5hbnRJZCI6IjY5M2Q5MDRlZTQwY2U0NmY2YjI0ZmE5YyIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc2NTkwNTQ5MSwiZXhwIjoxNzY1OTA5MDkxfQ.nM2Up8oqYoE1dJbSBCTT523D79DDrSOw5WbbSEBjevk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "     {\r\n        \"id\": \"693d8aaddcc1cc7b41504d0f\"\r\n     }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/system-config/modules/edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"system-config",
+								"modules",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:4000/api/system-config/modules/store-or-update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTNkOTA0ZWU0MGNlNDZmNmIyNGZhOWUiLCJ0ZW5hbnRJZCI6IjY5M2Q5MDRlZTQwY2U0NmY2YjI0ZmE5YyIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc2NTcyNTYzNCwiZXhwIjoxNzY1NzI5MjM0fQ.N9XkuaDXTEObHNTsoABRh3yz-tXqp0uClat_J_-B4wI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n //   \"id\": \"693d8aaddcc1cc7b41504d0f\",\r\n    \"code\": \"HRM Strart\",\r\n    \"description\": \"Employees, attendance, leave, payroll basics\",\r\n    \"isActive\": true,\r\n    \"name\": \"Human Resource Management strart\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/system-config/modules/store-or-update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"system-config",
+								"modules",
+								"store-or-update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:4000/api/system-config/modules/update-status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTNkOTA0ZWU0MGNlNDZmNmIyNGZhOWUiLCJ0ZW5hbnRJZCI6IjY5M2Q5MDRlZTQwY2U0NmY2YjI0ZmE5YyIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc2NTkwNTQ5MSwiZXhwIjoxNzY1OTA5MDkxfQ.nM2Up8oqYoE1dJbSBCTT523D79DDrSOw5WbbSEBjevk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"693d8aaddcc1cc7b41504d0f\",\r\n    \"isActive\": true\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/system-config/modules/update-status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"system-config",
+								"modules",
+								"update-status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:4000/api/system-config/modules/delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTNkOTA0ZWU0MGNlNDZmNmIyNGZhOWUiLCJ0ZW5hbnRJZCI6IjY5M2Q5MDRlZTQwY2U0NmY2YjI0ZmE5YyIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc2NTkwNTQ5MSwiZXhwIjoxNzY1OTA5MDkxfQ.nM2Up8oqYoE1dJbSBCTT523D79DDrSOw5WbbSEBjevk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": \"693ed9c552557045daf57445\"\r\n      \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/system-config/modules/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"system-config",
+								"modules",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pages",
+			"item": [
+				{
+					"name": "http://localhost:4000/api/system-config/pages/listing",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTNkOTA0ZWU0MGNlNDZmNmIyNGZhOWUiLCJ0ZW5hbnRJZCI6IjY5M2Q5MDRlZTQwY2U0NmY2YjI0ZmE5YyIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc2NTkwNjM3MywiZXhwIjoxNzY1OTA5OTczfQ.gSlanYdJCy1vtoaflnPUJ6JDtyiKIu3rE2xIH4OFtl0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  //\"moduleId\": \"MODULE_ID_HERE\",\r\n  \"onlyActive\": true,\r\n  \"search\": \"\",\r\n  \"page\": 1,\r\n  \"record\": 10,\r\n  \"sortBy\": \"createdAt\",\r\n  \"sortOrder\": \"asc\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/system-config/pages/listing",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"system-config",
+								"pages",
+								"listing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:4000/api/system-config/pages/edit",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTNkOTA0ZWU0MGNlNDZmNmIyNGZhOWUiLCJ0ZW5hbnRJZCI6IjY5M2Q5MDRlZTQwY2U0NmY2YjI0ZmE5YyIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc2NTkwNTc0MywiZXhwIjoxNzY1OTA5MzQzfQ.tnlCoUz7mdgSP2ZlVJHntnTH1hXr4ktS6L7HVMMpOSg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "     {\r\n        \"id\": \"6941951f6a6560398de25226\"\r\n     }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/system-config/pages/edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"system-config",
+								"pages",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:4000/api/system-config/pages/store-or-update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTNkOTA0ZWU0MGNlNDZmNmIyNGZhOWUiLCJ0ZW5hbnRJZCI6IjY5M2Q5MDRlZTQwY2U0NmY2YjI0ZmE5YyIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc2NTkwNTQ5MSwiZXhwIjoxNzY1OTA5MDkxfQ.nM2Up8oqYoE1dJbSBCTT523D79DDrSOw5WbbSEBjevk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n  //\"id\": \"694194a66a6560398de2521c\",\r\n  \"moduleId\": \"693d8aaddcc1cc7b41504d0f\",\r\n  \"code\": \"HRM_EMPLOYEE_LIST1\",\r\n  \"name\": \"Employee Directory\",\r\n  \"description\": \"Manage employees with filters\",\r\n  \"isActive\": true\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/system-config/pages/store-or-update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"system-config",
+								"pages",
+								"store-or-update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:4000/api/system-config/pages/update-status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTNkOTA0ZWU0MGNlNDZmNmIyNGZhOWUiLCJ0ZW5hbnRJZCI6IjY5M2Q5MDRlZTQwY2U0NmY2YjI0ZmE5YyIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc2NTkwNTc0MywiZXhwIjoxNzY1OTA5MzQzfQ.tnlCoUz7mdgSP2ZlVJHntnTH1hXr4ktS6L7HVMMpOSg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"6941951f6a6560398de25226\",\r\n    \"isActive\": true\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/system-config/pages/update-status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"system-config",
+								"pages",
+								"update-status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:4000/api/system-config/pages/delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTNkOTA0ZWU0MGNlNDZmNmIyNGZhOWUiLCJ0ZW5hbnRJZCI6IjY5M2Q5MDRlZTQwY2U0NmY2YjI0ZmE5YyIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc2NTkwNTc0MywiZXhwIjoxNzY1OTA5MzQzfQ.tnlCoUz7mdgSP2ZlVJHntnTH1hXr4ktS6L7HVMMpOSg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": \"6941951f6a6560398de25226\"\r\n      \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/system-config/pages/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"system-config",
+								"pages",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RolePermission",
+			"item": [
+				{
+					"name": "http://localhost:4000/api/system-config/role-permissions/listing",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTNkOTA0ZWU0MGNlNDZmNmIyNGZhOWUiLCJ0ZW5hbnRJZCI6IjY5M2Q5MDRlZTQwY2U0NmY2YjI0ZmE5YyIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc2NTkwNjM3MywiZXhwIjoxNzY1OTA5OTczfQ.gSlanYdJCy1vtoaflnPUJ6JDtyiKIu3rE2xIH4OFtl0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"moduleId\": \"693d8aaddcc1cc7b41504d0f\",\r\n  \"pageId\": \"694194a66a6560398de2521c\",\r\n  \"roleKey\": \"HR_MANAGER\",\r\n  \"onlyActive\": true,\r\n  \"search\": \"\",\r\n  \"page\": 1,\r\n  \"record\": 20,\r\n  \"sortBy\": \"createdAt\",\r\n  \"sortOrder\": \"asc\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/system-config/role-permissions/listing",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"system-config",
+								"role-permissions",
+								"listing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:4000/api/system-config/role-permissions/edit",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTNkOTA0ZWU0MGNlNDZmNmIyNGZhOWUiLCJ0ZW5hbnRJZCI6IjY5M2Q5MDRlZTQwY2U0NmY2YjI0ZmE5YyIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc2NTkwNjM3MywiZXhwIjoxNzY1OTA5OTczfQ.gSlanYdJCy1vtoaflnPUJ6JDtyiKIu3rE2xIH4OFtl0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "     {\r\n        \"id\": \"694196d16a6560398de25234\"\r\n     }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/system-config/role-permissions/edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"system-config",
+								"role-permissions",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:4000/api/system-config/role-permissions/store-or-update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTNkOTA0ZWU0MGNlNDZmNmIyNGZhOWUiLCJ0ZW5hbnRJZCI6IjY5M2Q5MDRlZTQwY2U0NmY2YjI0ZmE5YyIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc2NTkwNTc0MywiZXhwIjoxNzY1OTA5MzQzfQ.tnlCoUz7mdgSP2ZlVJHntnTH1hXr4ktS6L7HVMMpOSg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n // \"id\": \"ROLE_PERMISSION_ID_HERE\",\r\n  \"moduleId\": \"693d8aaddcc1cc7b41504d0f\",\r\n  \"pageId\": \"694194a66a6560398de2521c\",\r\n  \"roleKey\": \"HR_MANAGER\",\r\n  \"code\": \"HRM_EMPLOYEE_LIST_FULL1\",\r\n  \"name\": \"Employee List - Full Access1\",\r\n  \"description\": \"HR manager can view, add and edit employees\",\r\n  \"canView\": true,\r\n  \"canCreate\": true,\r\n  \"canEdit\": true,\r\n  \"canDelete\": false,\r\n  \"isActive\": true\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/system-config/role-permissions/store-or-update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"system-config",
+								"role-permissions",
+								"store-or-update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:4000/api/system-config/role-permissions/update-status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTNkOTA0ZWU0MGNlNDZmNmIyNGZhOWUiLCJ0ZW5hbnRJZCI6IjY5M2Q5MDRlZTQwY2U0NmY2YjI0ZmE5YyIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc2NTkwNjM3MywiZXhwIjoxNzY1OTA5OTczfQ.gSlanYdJCy1vtoaflnPUJ6JDtyiKIu3rE2xIH4OFtl0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"694196d16a6560398de25234\",\r\n    \"isActive\": true\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/system-config/role-permissions/update-status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"system-config",
+								"role-permissions",
+								"update-status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:4000/api/system-config/role-permissions/delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTNkOTA0ZWU0MGNlNDZmNmIyNGZhOWUiLCJ0ZW5hbnRJZCI6IjY5M2Q5MDRlZTQwY2U0NmY2YjI0ZmE5YyIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc2NTkwNjM3MywiZXhwIjoxNzY1OTA5OTczfQ.gSlanYdJCy1vtoaflnPUJ6JDtyiKIu3rE2xIH4OFtl0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": \"694196d16a6560398de25234\"\r\n      \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/system-config/role-permissions/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"system-config",
+								"role-permissions",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SubscriptionPlan",
+			"item": [
+				{
+					"name": "http://localhost:4000/api/system-config/subscription-plans/listing-tenants",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTNkOTA0ZWU0MGNlNDZmNmIyNGZhOWUiLCJ0ZW5hbnRJZCI6IjY5M2Q5MDRlZTQwY2U0NmY2YjI0ZmE5YyIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc2NTkwNTQ5MSwiZXhwIjoxNzY1OTA5MDkxfQ.nM2Up8oqYoE1dJbSBCTT523D79DDrSOw5WbbSEBjevk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"onlyActive\": true,\r\n  \"search\": \"payrol\",\r\n  \"page\": 1,\r\n  \"record\": 10,\r\n  \"sortBy\": \"createdAt\",\r\n  \"sortOrder\": \"asc\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/system-config/subscription-plans/listing-tenants",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"system-config",
+								"subscription-plans",
+								"listing-tenants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:4000/api/system-config/subscription-plans/edit",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTNkOTA0ZWU0MGNlNDZmNmIyNGZhOWUiLCJ0ZW5hbnRJZCI6IjY5M2Q5MDRlZTQwY2U0NmY2YjI0ZmE5YyIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc2NTkwNTQ5MSwiZXhwIjoxNzY1OTA5MDkxfQ.nM2Up8oqYoE1dJbSBCTT523D79DDrSOw5WbbSEBjevk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "     {\r\n        \"id\": \"693d8aaddcc1cc7b41504d0f\"\r\n     }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/system-config/subscription-plans/edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"system-config",
+								"subscription-plans",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:4000/api/system-config/subscription-plans/store-or-update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTNkOTA0ZWU0MGNlNDZmNmIyNGZhOWUiLCJ0ZW5hbnRJZCI6IjY5M2Q5MDRlZTQwY2U0NmY2YjI0ZmE5YyIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc2NTcyNTYzNCwiZXhwIjoxNzY1NzI5MjM0fQ.N9XkuaDXTEObHNTsoABRh3yz-tXqp0uClat_J_-B4wI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n //   \"id\": \"693d8aaddcc1cc7b41504d0f\",\r\n    \"code\": \"HRM Strart\",\r\n    \"description\": \"Employees, attendance, leave, payroll basics\",\r\n    \"isActive\": true,\r\n    \"name\": \"Human Resource Management strart\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/system-config/subscription-plans/store-or-update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"system-config",
+								"subscription-plans",
+								"store-or-update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:4000/api/system-config/subscription-plans/update-status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTNkOTA0ZWU0MGNlNDZmNmIyNGZhOWUiLCJ0ZW5hbnRJZCI6IjY5M2Q5MDRlZTQwY2U0NmY2YjI0ZmE5YyIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc2NTkwNTQ5MSwiZXhwIjoxNzY1OTA5MDkxfQ.nM2Up8oqYoE1dJbSBCTT523D79DDrSOw5WbbSEBjevk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"693d8aaddcc1cc7b41504d0f\",\r\n    \"isActive\": true\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/system-config/subscription-plans/update-status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"system-config",
+								"subscription-plans",
+								"update-status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:4000/api/system-config/subscription-plans/delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTNkOTA0ZWU0MGNlNDZmNmIyNGZhOWUiLCJ0ZW5hbnRJZCI6IjY5M2Q5MDRlZTQwY2U0NmY2YjI0ZmE5YyIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc2NTkwNTQ5MSwiZXhwIjoxNzY1OTA5MDkxfQ.nM2Up8oqYoE1dJbSBCTT523D79DDrSOw5WbbSEBjevk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": \"693ed9c552557045daf57445\"\r\n      \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/system-config/subscription-plans/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"system-config",
+								"subscription-plans",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tenants + Subscription + Payment",
+			"item": [
+				{
+					"name": "http://localhost:4000/api/system-config/modules/listing",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTNkOTA0ZWU0MGNlNDZmNmIyNGZhOWUiLCJ0ZW5hbnRJZCI6IjY5M2Q5MDRlZTQwY2U0NmY2YjI0ZmE5YyIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc2NTkwNTQ5MSwiZXhwIjoxNzY1OTA5MDkxfQ.nM2Up8oqYoE1dJbSBCTT523D79DDrSOw5WbbSEBjevk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"onlyActive\": true,\r\n  \"search\": \"payrol\",\r\n  \"page\": 1,\r\n  \"record\": 10,\r\n  \"sortBy\": \"createdAt\",\r\n  \"sortOrder\": \"asc\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/system-config/modules/listing",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"system-config",
+								"modules",
+								"listing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:4000/api/system-config/modules/edit",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTNkOTA0ZWU0MGNlNDZmNmIyNGZhOWUiLCJ0ZW5hbnRJZCI6IjY5M2Q5MDRlZTQwY2U0NmY2YjI0ZmE5YyIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc2NTkwNTQ5MSwiZXhwIjoxNzY1OTA5MDkxfQ.nM2Up8oqYoE1dJbSBCTT523D79DDrSOw5WbbSEBjevk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "     {\r\n        \"id\": \"693d8aaddcc1cc7b41504d0f\"\r\n     }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/system-config/modules/edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"system-config",
+								"modules",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:4000/api/system-config/modules/store-or-update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTNkOTA0ZWU0MGNlNDZmNmIyNGZhOWUiLCJ0ZW5hbnRJZCI6IjY5M2Q5MDRlZTQwY2U0NmY2YjI0ZmE5YyIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc2NTcyNTYzNCwiZXhwIjoxNzY1NzI5MjM0fQ.N9XkuaDXTEObHNTsoABRh3yz-tXqp0uClat_J_-B4wI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n //   \"id\": \"693d8aaddcc1cc7b41504d0f\",\r\n    \"code\": \"HRM Strart\",\r\n    \"description\": \"Employees, attendance, leave, payroll basics\",\r\n    \"isActive\": true,\r\n    \"name\": \"Human Resource Management strart\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/system-config/modules/store-or-update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"system-config",
+								"modules",
+								"store-or-update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:4000/api/system-config/modules/update-status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTNkOTA0ZWU0MGNlNDZmNmIyNGZhOWUiLCJ0ZW5hbnRJZCI6IjY5M2Q5MDRlZTQwY2U0NmY2YjI0ZmE5YyIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc2NTkwNTQ5MSwiZXhwIjoxNzY1OTA5MDkxfQ.nM2Up8oqYoE1dJbSBCTT523D79DDrSOw5WbbSEBjevk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"693d8aaddcc1cc7b41504d0f\",\r\n    \"isActive\": true\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/system-config/modules/update-status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"system-config",
+								"modules",
+								"update-status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:4000/api/system-config/modules/delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTNkOTA0ZWU0MGNlNDZmNmIyNGZhOWUiLCJ0ZW5hbnRJZCI6IjY5M2Q5MDRlZTQwY2U0NmY2YjI0ZmE5YyIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc2NTkwNTQ5MSwiZXhwIjoxNzY1OTA5MDkxfQ.nM2Up8oqYoE1dJbSBCTT523D79DDrSOw5WbbSEBjevk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": \"693ed9c552557045daf57445\"\r\n      \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/system-config/modules/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"system-config",
+								"modules",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payments",
+			"item": [
+				{
+					"name": "http://localhost:4000/api/system-config/modules/listing",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTNkOTA0ZWU0MGNlNDZmNmIyNGZhOWUiLCJ0ZW5hbnRJZCI6IjY5M2Q5MDRlZTQwY2U0NmY2YjI0ZmE5YyIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc2NTkwNTQ5MSwiZXhwIjoxNzY1OTA5MDkxfQ.nM2Up8oqYoE1dJbSBCTT523D79DDrSOw5WbbSEBjevk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"onlyActive\": true,\r\n  \"search\": \"payrol\",\r\n  \"page\": 1,\r\n  \"record\": 10,\r\n  \"sortBy\": \"createdAt\",\r\n  \"sortOrder\": \"asc\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/system-config/modules/listing",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"system-config",
+								"modules",
+								"listing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:4000/api/system-config/modules/edit",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTNkOTA0ZWU0MGNlNDZmNmIyNGZhOWUiLCJ0ZW5hbnRJZCI6IjY5M2Q5MDRlZTQwY2U0NmY2YjI0ZmE5YyIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc2NTkwNTQ5MSwiZXhwIjoxNzY1OTA5MDkxfQ.nM2Up8oqYoE1dJbSBCTT523D79DDrSOw5WbbSEBjevk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "     {\r\n        \"id\": \"693d8aaddcc1cc7b41504d0f\"\r\n     }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/system-config/modules/edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"system-config",
+								"modules",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:4000/api/system-config/modules/store-or-update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTNkOTA0ZWU0MGNlNDZmNmIyNGZhOWUiLCJ0ZW5hbnRJZCI6IjY5M2Q5MDRlZTQwY2U0NmY2YjI0ZmE5YyIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc2NTcyNTYzNCwiZXhwIjoxNzY1NzI5MjM0fQ.N9XkuaDXTEObHNTsoABRh3yz-tXqp0uClat_J_-B4wI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n //   \"id\": \"693d8aaddcc1cc7b41504d0f\",\r\n    \"code\": \"HRM Strart\",\r\n    \"description\": \"Employees, attendance, leave, payroll basics\",\r\n    \"isActive\": true,\r\n    \"name\": \"Human Resource Management strart\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/system-config/modules/store-or-update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"system-config",
+								"modules",
+								"store-or-update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:4000/api/system-config/modules/update-status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTNkOTA0ZWU0MGNlNDZmNmIyNGZhOWUiLCJ0ZW5hbnRJZCI6IjY5M2Q5MDRlZTQwY2U0NmY2YjI0ZmE5YyIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc2NTkwNTQ5MSwiZXhwIjoxNzY1OTA5MDkxfQ.nM2Up8oqYoE1dJbSBCTT523D79DDrSOw5WbbSEBjevk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"693d8aaddcc1cc7b41504d0f\",\r\n    \"isActive\": true\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/system-config/modules/update-status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"system-config",
+								"modules",
+								"update-status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:4000/api/system-config/modules/delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTNkOTA0ZWU0MGNlNDZmNmIyNGZhOWUiLCJ0ZW5hbnRJZCI6IjY5M2Q5MDRlZTQwY2U0NmY2YjI0ZmE5YyIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc2NTkwNTQ5MSwiZXhwIjoxNzY1OTA5MDkxfQ.nM2Up8oqYoE1dJbSBCTT523D79DDrSOw5WbbSEBjevk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": \"693ed9c552557045daf57445\"\r\n      \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/system-config/modules/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"system-config",
+								"modules",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tenants",
+			"item": [
+				{
+					"name": "http://localhost:4000/api/system-config/modules/listing",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTNkOTA0ZWU0MGNlNDZmNmIyNGZhOWUiLCJ0ZW5hbnRJZCI6IjY5M2Q5MDRlZTQwY2U0NmY2YjI0ZmE5YyIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc2NTkwNTQ5MSwiZXhwIjoxNzY1OTA5MDkxfQ.nM2Up8oqYoE1dJbSBCTT523D79DDrSOw5WbbSEBjevk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"onlyActive\": true,\r\n  \"search\": \"payrol\",\r\n  \"page\": 1,\r\n  \"record\": 10,\r\n  \"sortBy\": \"createdAt\",\r\n  \"sortOrder\": \"asc\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/system-config/modules/listing",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"system-config",
+								"modules",
+								"listing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:4000/api/system-config/modules/edit",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTNkOTA0ZWU0MGNlNDZmNmIyNGZhOWUiLCJ0ZW5hbnRJZCI6IjY5M2Q5MDRlZTQwY2U0NmY2YjI0ZmE5YyIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc2NTkwNTQ5MSwiZXhwIjoxNzY1OTA5MDkxfQ.nM2Up8oqYoE1dJbSBCTT523D79DDrSOw5WbbSEBjevk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "     {\r\n        \"id\": \"693d8aaddcc1cc7b41504d0f\"\r\n     }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/system-config/modules/edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"system-config",
+								"modules",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:4000/api/system-config/modules/store-or-update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTNkOTA0ZWU0MGNlNDZmNmIyNGZhOWUiLCJ0ZW5hbnRJZCI6IjY5M2Q5MDRlZTQwY2U0NmY2YjI0ZmE5YyIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc2NTcyNTYzNCwiZXhwIjoxNzY1NzI5MjM0fQ.N9XkuaDXTEObHNTsoABRh3yz-tXqp0uClat_J_-B4wI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n //   \"id\": \"693d8aaddcc1cc7b41504d0f\",\r\n    \"code\": \"HRM Strart\",\r\n    \"description\": \"Employees, attendance, leave, payroll basics\",\r\n    \"isActive\": true,\r\n    \"name\": \"Human Resource Management strart\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/system-config/modules/store-or-update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"system-config",
+								"modules",
+								"store-or-update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:4000/api/system-config/modules/update-status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTNkOTA0ZWU0MGNlNDZmNmIyNGZhOWUiLCJ0ZW5hbnRJZCI6IjY5M2Q5MDRlZTQwY2U0NmY2YjI0ZmE5YyIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc2NTkwNTQ5MSwiZXhwIjoxNzY1OTA5MDkxfQ.nM2Up8oqYoE1dJbSBCTT523D79DDrSOw5WbbSEBjevk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"693d8aaddcc1cc7b41504d0f\",\r\n    \"isActive\": true\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/system-config/modules/update-status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"system-config",
+								"modules",
+								"update-status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:4000/api/system-config/modules/delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTNkOTA0ZWU0MGNlNDZmNmIyNGZhOWUiLCJ0ZW5hbnRJZCI6IjY5M2Q5MDRlZTQwY2U0NmY2YjI0ZmE5YyIsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc2NTkwNTQ5MSwiZXhwIjoxNzY1OTA5MDkxfQ.nM2Up8oqYoE1dJbSBCTT523D79DDrSOw5WbbSEBjevk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": \"693ed9c552557045daf57445\"\r\n      \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/system-config/modules/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"system-config",
+								"modules",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Plan",
+			"item": [
+				{
+					"name": "http://localhost:4000/api/v1/plans",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/plans?module=HRM",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"plans"
+							],
+							"query": [
+								{
+									"key": "module",
+									"value": "HRM"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:4000/api/v1/subscriptions/create-checkout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTM3MjYxOTdmY2E1MGM5YzA0MzdkNzciLCJ0ZW5hbnRJZCI6IjY5MzcyNjE5N2ZjYTUwYzljMDQzN2Q3NSIsInJvbGUiOiJURU5BTlRfQURNSU4iLCJpYXQiOjE3NjU2NDAzNTEsImV4cCI6MTc2NTY0Mzk1MX0.aIa1ADFw5LcKOrYJDtY2IlttdCTAXh5EP5Ov2qBKGa4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"planId\": \"693d8aad3baa7fa44bf9976c\",\r\n  \"successUrl\": \"http://localhost:3000/billing/success\",\r\n  \"cancelUrl\": \"http://localhost:3000/billing/cancel\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/subscriptions/create-checkout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"subscriptions",
+								"create-checkout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
